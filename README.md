@@ -1,34 +1,31 @@
-# ydata
-# Streamlit App with ydata-synthetic 
+# Importing Existing DNS Records with Terraform and Cloudflare
 
-This README provides instructions for setting up and running a Streamlit app that uses ydata-synthetic  to generate synthetic data samples. Follow the steps below to get started.
+This guide explains how to import existing DNS records into Terraform when Terraform attempts to recreate resources that already exist in your Cloudflare account.
 
 ## Prerequisites
 
-- Python 3.9 or higher
-- Conda (for creating a virtual environment)
-- pip (Python package manager)
+- [Terraform](https://www.terraform.io/downloads.html)
+- A Cloudflare account
+- Terraform Cloudflare provider correctly configured
 
-## Installation
+## Importing DNS Records
 
-1. Virtual Environment Creation:
-    conda create --name ydata-synthetic-env python=3.10
-   
-3. Activation of Virtual Environment:
-     conda activate ydata-synthetic-env
-4. Installation of ydata-synthetic:
-     pip install "ydata-synthetic[streamlit]"
-5. Cloning of Repo
-     https://github.com/ydataai/ydata-synthetic
-6. Testing
-     Testing with the file streamlit_app.py that can be found in the examples folder of the cloned repo.
-7. Run the Streamlit App: This will start the development server and display a URL in the terminal (usually http://localhost:8501)
-     python -m streamlit_app
-   
-8. Interact with the App
-   In your Streamlit app, you can interact with the user interface to generate synthetic data samples based on your project requirements. Adjust input parameters as needed.
+When Terraform encounters an issue where it's trying to recreate existing resources, follow these steps to import the existing DNS records:
 
-## Conclusion
-That's it! You have successfully set up and run a Streamlit app using ydata-synthetic for generating synthetic data samples. You can now customize the app further to suit your specific use case and requirements.
+1. **Identify Existing DNS Records:**
 
+   - Log in to your Cloudflare account.
+   - Confirm the presence of the DNS records that Terraform is trying to manage.
 
+2. **Retrieve Cloudflare Zone ID:**
+
+   - Find the Cloudflare Zone ID for your domain in the Cloudflare dashboard.
+
+3. **Import Existing DNS Records:**
+
+   - Use the following `terraform import` commands to import the DNS records into Terraform, utilizing the "zoneID/recordID" format:
+
+   ```bash
+   terraform import module.nextresearch-mail-record.cloudflare_record.record ZONE_ID/DNS_RECORD_ID
+   terraform import module.nextresearch-record.cloudflare_record.record ZONE_ID/DNS_RECORD_ID
+   terraform import module.nextresearch-www-record.cloudflare_record.record ZONE_ID/DNS_RECORD_ID
