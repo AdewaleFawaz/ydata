@@ -56,8 +56,7 @@ When you encounter an error message in Terraform indicating that a resource alre
 terraform import module.nextresearch-mail-record.cloudflare_record.record YOUR_ZONE_ID/NAME
 terraform import module.nextresearch-record.cloudflare_record.record YOUR_ZONE_ID/NAME
 terraform import module.nextresearch-www-record.cloudflare_record.record YOUR_ZONE_ID/NAME
-
-     ```
+ ```
 
      Replace `MODULE_NAME` with your module name, `ZONE_ID` with your Cloudflare Zone ID, and `RESOURCE_IDENTIFIER` with the specific resource identifier.
 
