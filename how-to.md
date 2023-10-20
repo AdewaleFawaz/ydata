@@ -27,7 +27,7 @@ When you encounter an error message in Terraform indicating that a resource alre
    - Identify and locate the DNS records that Terraform is trying to manage.
 
 3. **Remove Existing DNS Records:**
-
+   
    - For each DNS record that Terraform is attempting to recreate, delete the existing record manually in the Cloudflare dashboard.
 
    - Click the "Delete" or "Remove" option for the specific record.
