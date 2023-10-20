@@ -68,7 +68,7 @@ NAME should be replaced with the specific DNS record name you want to import for
 
 5. **Reapply Terraform Configuration:**
 
-   - Run `terraform apply` to ensure that Terraform now correctly manages the existing DNS records without attempting to recreate them.
+   - Run ` terraform apply -auto-approve -lock=false` to ensure that Terraform now correctly manages the existing DNS records without attempting to recreate them.
 
 ## Conclusion
 
