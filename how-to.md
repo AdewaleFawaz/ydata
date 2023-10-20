@@ -63,8 +63,12 @@ terraform import module.nextresearch-www-record.cloudflare_record.record 64fa290
 4. **Update Terraform Configuration:**
 
    - After importing, ensure that your Terraform configuration accurately reflects the settings of the imported DNS records.
+  
+5. **Run the terraform init command:**
 
-5. **Reapply Terraform Configuration:**
+   - Run ` terraform init` to initialize your Terraform working.
+
+6. **Reapply Terraform Configuration:**
 
    - Run ` terraform apply -auto-approve -lock=false` to ensure that Terraform now correctly manages the existing DNS records without attempting to recreate them.
 
