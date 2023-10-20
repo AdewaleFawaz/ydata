@@ -53,14 +53,12 @@ When you encounter an error message in Terraform indicating that a resource alre
      For example, to import a specific DNS record:
 
 ```bash
-terraform import module.nextresearch-mail-record.cloudflare_record.record YOUR_ZONE_ID/NAME
-terraform import module.nextresearch-record.cloudflare_record.record YOUR_ZONE_ID/NAME
-terraform import module.nextresearch-www-record.cloudflare_record.record YOUR_ZONE_ID/NAME
+terraform import module.nextresearch-www-record.cloudflare_record.record 64fa290c159e1edfd0045b0839768b02/68b0afa38cdcf5e6b2272fbf431032e9
 ```
 
-   module.nextresearch-mail-record, module.nextresearch-record, and module.nextresearch-www-record should match the module names you are using in your Terraform configuration.
-YOUR_ZONE_ID should be replaced with your actual Cloudflare Zone ID.
-NAME should be replaced with the specific DNS record name you want to import for each respective module.
+ module.nextresearch-www-record should match the module names you are using in your Terraform configuration.
+64fa290c159e1edfd0045b0839768b02 should be replaced with your actual Cloudflare Zone ID.
+68b0afa38cdcf5e6b2272fbf431032e9 should be replaced with the specific record Id you want to import for each respective module.
 
 4. **Update Terraform Configuration:**
 
